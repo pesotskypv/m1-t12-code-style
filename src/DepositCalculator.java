@@ -19,11 +19,11 @@ public class DepositCalculator {
     }
 
     double roundValue(double value, int power) {
-        double numberHundred;
+        double powerNumber;
         int numberTen = 10;
 
-        numberHundred = Math.pow(numberTen, power);
-        return Math.round(value * numberHundred) / numberHundred;
+        powerNumber = Math.pow(numberTen, power);
+        return Math.round(value * powerNumber) / powerNumber;
     }
 
     void printMenu() {
@@ -40,9 +40,9 @@ public class DepositCalculator {
         period = scanner.nextInt();
         System.out.println("Выберите тип вклада, 1 - вклад с обычным процентом, 2 - вклад с капитализацией:");
         action = scanner.nextInt();
-        if (action == 1)
+        if (action == 1) {
             cashOut = calculateSimplePercent(amount, yearRate, period);
-        else if (action == 2) {
+        } else if (action == 2) {
             cashOut = calculateComplexPercent(amount, yearRate, period);
         }
         System.out.println("Результат вклада: " + amount + " за " + period + " лет превратятся в " + cashOut);
